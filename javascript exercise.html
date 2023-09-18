@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .button {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+
+        <body>
+
+    <!-- number 1 of the assignment-->
+             <h1>part i</h1>
+             <p id="demo"></p>
+
+    <script>
+        const d = new Date();
+        document.getElementById("demo").innerHTML = "Today is:" + d;
+    </script>
+
+    <!--number 2 of the assignment-->
+    <h1>part ii</h1>
+    <p>
+        <label> Fanhrenheit</label>
+        <input id="inputFanhrenheit" type="number" placeholder="Fanhrenheit" oninput="temperatureConverter(this.value)"
+            onchange="temperatureConverter(this.value)">
+    </p>
+    <p>Celsius : <span id="outputCelsius"></span></p>
+    <script>
+        function temperatureConverter(valNum) {
+            valNum = parseFloat(valNum);
+
+            document.getElementById("outputCelsius").innerHTML = (valNum - 32) / 1.8;
+        }
+    </script>
+
+    <!--number 3 of the assignment-->
+    <h1>part iii</h1>
+    <p><label for="num1"> 1st number:</label>
+        <input type="number" id="num1" name="num1">
+    </p>
+    <p><label for="num2">2nd number:</label>
+        <input type="number" id="num2" name="num2">
+    </p>
+    <p><button type="button" onclick="multiply()">Multiply</button> <button type="button"
+            onclick="divide()">Divide</button></p>
+    <label for="result">the result is:</label>
+    <input type="text" id="result" name="result" readonly>
+    <script>
+        function multiply() {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let product = num1 * num2;
+
+            document.getElementById("result").value = product;
+        }
+        function divide() {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let quotient = num1 / num2;
+            document.getElementById("result").value = quotient;
+        }
+    </script>
+
+    <!--number 4 of the assignment-->
+    <h1>part iv</h1>
+    <p>Click the button to swap the first and last elements of the array:</p>
+    <button onclick="swapArray()">Swap Array</button>
+    <p id="output"></p>
+    <script>
+        function swapArray() {
+            let arr = [190, 192, 193, 194, 195];
+            [arr[0], arr[arr.length - 1]] = [arr[arr.length - 1], arr[0]];
+            document.getElementById("output").innerHTML = "Swapped array: " + arr;
+        }
+    </script>
+
+    <!--number 5 of the assignment-->
+    <h1>part v</h1>
+    <p>Enter a string to remove repeated characters:</p>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="removeRepeated()">Remove Repeated Characters</button>
+    <p id="outpu"></p>
+    <script>
+        function removeRepeated() {
+            let inputString = document.getElementById("inputString").value;
+            let outputString = "";
+            for (let i = 0; i < inputString.length; i++) {
+                if (inputString.lastIndexOf(inputString[i]) == inputString.indexOf(inputString[i])) {
+                    outputString += inputString[i];
+                }
+            }
+            document.getElementById("outpu").innerHTML = "Output string: " + outputString;
+        }
+    </script>
+
+    <!--part 6 of the assignment-->
+    <h1>part vi</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Odd/Even</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                for (let i = 0; i <= 15; i++) {
+                    document.write("<tr><td>" + i + "</td><td>" + (i % 2 == 0 ? "Even" : "Odd") + "</td></tr>");
+                }
+            </script>
+        </tbody>
+    </table>
+
+    <!--part 7 of the assignment-->
+    <h1>part vii</h1>
+    <h2 id="hello">Hello</h2>
+    <p>Enter a word to replace "Hello":</p>
+    <input type="text" id="inputWord" placeholder="Enter a word">
+    <button onclick="replaceText()">Replace Text</button>
+    <script>
+        function replaceText() {
+            let inputWord = document.getElementById("inputWord").value;
+            document.getElementById("hello").innerHTML = inputWord;
+        }
+    </script>
+
+    <!--part 8 of the assignment-->
+    <h1>part viii</h1>
+    <button class="button">hover</button>
+
+</body>
+
+</html>
